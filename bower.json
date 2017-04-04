@@ -1,0 +1,17 @@
+{
+  "name": "angular4-todo",
+  "description": "",
+  "main": "",
+  "authors": [
+    "chaluvadis <surendra.chaluvadi@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
