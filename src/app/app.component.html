@@ -1,22 +1,7 @@
 <div class="container">
   <div class="row">
-    <label for="name">Enter Task</label>
-    <form (submit)="addTask()">
-      <input type="text" name="name" [(ngModel)]="title" class="form-control" placeholder="Enter your task">
-    </form>
+    <app-add></app-add>
     <hr>
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Task Name</th>
-          <th>Status</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-          <app-todo *ngFor="let task of tasks; let i = index" [id]="task.id" [title]="task.title" [status]="task.status"></app-todo>
-      </tbody>
-    </table>
+    <app-list [tasks]="tasks"></app-list>
   </div>
 </div>
