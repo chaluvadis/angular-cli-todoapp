@@ -9,7 +9,7 @@
     {{task.status}}
   </div>
   <div class="col-md-2">
-    <button type="button" class="btn btn-primary" [disabled]="status === 'Done'" (click)="editTaskStatus(task)">Done</button>
+    <a [routerLink]="['/edit', task.id]" class="btn btn-primary">Edit</a>
   </div>
   <div class="col-md-2">
     <button type="button" class="btn btn-danger" (click)="removeTask(task)">Remove</button>

@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router'
+
 import { AppService } from '../../app.service';
 import { Task } from '../../task';
 @Component({

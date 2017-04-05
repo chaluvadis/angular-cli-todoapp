@@ -7,7 +7,7 @@ import { ListComponent } from './todo/list/list.component';
 const App_Routes: Routes = [
     { path: '', redirectTo: 'list', pathMatch: 'full' },
     { path: 'list', component: ListComponent },
-    { path: 'edit', component: EditComponent }
+    { path: 'edit/:id', component: EditComponent }
 ];
 
 export const routes = RouterModule.forRoot(App_Routes);
