@@ -2,13 +2,16 @@
     <div class="col-md-2">
       {{id}}
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
       {{title}}
     </div>
     <div class="col-md-2">
         {{status}}
     </div>
     <div class="col-md-2">
-        <a href="#">Edit</a>
+        <button type="button" class="btn btn-primary" [disabled]="status === 'Done'" (click)="editTaskStatus(id, title, status)">Done</button>
+    </div>
+    <div class="col-md-2">
+        <button type="button" class="btn btn-danger" (click)="removeTask(id, title, status)">Remove</button>
     </div>
   </div>

@@ -1,22 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+
+import { AppService } from '../../app.service';
+
+import { Task } from '../../task';
 
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html'
 })
 export class AddComponent {
-  title = '';
-  tasks = []
-  constructor() { }
+  private title = '';
+  private _task: Task;
+  constructor(private appService: AppService) { }
   addTask() {
     if (this.title !== '') {
-      this.tasks.push({
-        id: this.tasks.length + 1,
-        status: 'pending',
-        title: this.title
-      });
+      this._task = {
+        id: 0,
+        title: this.title,
+        status: 'pending'
+      }
+      this.appService.addTask(this._task);
       this.title = '';
-      console.table(this.tasks);
+      console.log('add task fired');
     }
   }
 }

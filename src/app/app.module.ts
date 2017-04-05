@@ -9,6 +9,7 @@ import { AddComponent } from './todo/add/add.component';
 import { TodoComponent } from './todo/todo.component';
 import { EditComponent } from './todo/edit/edit.component';
 import { ListComponent } from './todo/list/list.component';
+import { AppService } from '../app/app.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { ListComponent } from './todo/list/list.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
