@@ -11,25 +11,8 @@ export class AppService {
     { id: 6, title: 'task 6', status: 'pending' }
   ];
   constructor() { }
-  addTask(task: Task) {
-    task.id = this._tasks.length + 1;
-    this._tasks.push(task);
-  }
- 
-  getAllTasks() {
-    return this._tasks;
-  }
- 
-  editTaskStatus(task: Task) {
-    let filterTask = this.getTaskById(task.id);
-    filterTask.status = 'Done';
-  }
-
-  removeTask(task: Task) {
-    this._tasks.splice(this._tasks.indexOf(task), 1);
-  }
-
-  getTaskById(id: number) {
-    return this._tasks.find(x => x.id ===id);
-  }
+  addTask = (task: Task): void => { this._tasks.push({ id: this._tasks.length + 1, title: task.title, status: task.status }) }
+  getAllTasks = (): Task[] => { return this._tasks; }
+  removeTask = (task: Task): void => { this._tasks.splice(this._tasks.indexOf(task), 1); }
+  getTaskById = (id: number): Task => { return this._tasks.find(x => x.id === id); }
 }
