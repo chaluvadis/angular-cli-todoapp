@@ -1,4 +1,8 @@
-<label for="name">Enter Task</label>
+<p class="text-center">
+  <label for="name" style="color:darkblue;">
+        <h3>My Todo App</h3>
+    </label>
+</p>
 <form (submit)="addTask()">
-    <input type="text" name="name" [(ngModel)]="title" class="form-control" placeholder="Enter your task">
+  <input type="text" name="name" [(ngModel)]="title" class="form-control" placeholder="Enter your task">
 </form>

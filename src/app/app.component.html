@@ -1,7 +1,23 @@
 <div class="container">
   <div class="row">
     <app-add></app-add>
-    <hr>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-2">
+      <label for="">Id</label>
+    </div>
+    <div class="col-md-6">
+      <label for="">Title</label>
+    </div>
+    <div class="col-md-2">
+      <label for="">Status</label>
+    </div>
+    <div class="col-md-2">
+      <label for="">Action</label>
+    </div>
+  </div>
+  <div class="row">
     <app-list [tasks]="tasks"></app-list>
   </div>
 </div>

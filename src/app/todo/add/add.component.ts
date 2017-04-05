@@ -7,13 +7,7 @@ import { Component } from '@angular/core';
 export class AddComponent {
   title = '';
   tasks = []
-  constructor() {
-    this.tasks.push({
-      id: 1,
-      status: 'pending',
-      title: 'test task'
-    })
-  }
+  constructor() { }
   addTask() {
     if (this.title !== '') {
       this.tasks.push({
