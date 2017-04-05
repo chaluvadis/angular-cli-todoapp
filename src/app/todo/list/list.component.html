@@ -1,5 +1,26 @@
+<app-add></app-add>
 <ul class="list-group">
+  <li class="list-group-item active">
+    <div class="row">
+      <div class="col-md-2">
+        Id
+      </div>
+      <div class="col-md-4">
+        Title
+      </div>
+      <div class="col-md-2">
+        Status
+      </div>
+      <div class="col-md-2">
+        Edit
+      </div>
+      <div class="col-md-2">
+        Remove
+      </div>
+    </div>
+  </li>
   <li *ngFor="let task of tasks" class="list-group-item">
-    <app-todo [id]="task.id" [title]="task.title" [status]="task.status"></app-todo>
+    <!--<app-todo [id]="task.id" [title]="task.title" [status]="task.status"></app-todo>-->
+    <app-todo [task]="task"></app-todo>
   </li>
 </ul>

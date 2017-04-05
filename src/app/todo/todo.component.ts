@@ -9,27 +9,14 @@ import { Task } from '../task';
   templateUrl: './todo.component.html'
 })
 export class TodoComponent {
-  @Input() id: number;
-  @Input() title: string;
-  @Input() status: string;
-
+  @Input() task:Task;
   constructor(private appService: AppService) { }
-
-  removeTask(id:number, title:string, status:string) {
-    console.log(id, title, status);
-    this.appService.removeTask({
-      id: id,
-      title: title,
-      status: status,
-    });
+  removeTask(task:Task) {
+    console.log(task);
+    this.appService.removeTask(task);
   }
-
-  editTaskStatus(id:number, title:string, status:string) {
-    console.log(id, title, status);
-    this.appService.editTaskStatus({
-      id: id,
-      title: title,
-      status: status
-    });
+  editTaskStatus(task:Task) {
+    console.log(task);
+    this.appService.editTaskStatus(task);
   }
 }

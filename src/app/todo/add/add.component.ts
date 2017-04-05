@@ -1,9 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-
 import { AppService } from '../../app.service';
-
 import { Task } from '../../task';
-
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html'
@@ -21,7 +18,6 @@ export class AddComponent {
       }
       this.appService.addTask(this._task);
       this.title = '';
-      console.log('add task fired');
     }
   }
 }

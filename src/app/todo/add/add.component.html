@@ -1,15 +1,9 @@
 <div class="row">
-  <p class="text-center">
-    <label for="name" style="color:darkblue;">
-        <h3>My Todo App</h3>
-    </label>
-  </p>
-</div>
-<div class="row">
-  <div class="col-md-8">
+  <div class="col-md-10">
     <input type="text" name="name" [(ngModel)]="title" class="form-control" placeholder="Enter your task">
   </div>
   <div class="col-md-2">
-    <button type="button" class="btn btn-success " (click)="addTask()"> Add </button>
+    <button type="button" class="btn btn-success " (click)="addTask()" style="float:right;"> Add </button>
   </div>
 </div>
+<hr>

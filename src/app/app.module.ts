@@ -10,19 +10,22 @@ import { TodoComponent } from './todo/todo.component';
 import { EditComponent } from './todo/edit/edit.component';
 import { ListComponent } from './todo/list/list.component';
 import { AppService } from '../app/app.service';
-
+import { routes } from "app/app.routes";
+import { HeaderComponent } from './header/header.component';
 @NgModule({
   declarations: [
     AppComponent,
     TodoComponent,
     EditComponent,
     ListComponent,
-    AddComponent
+    AddComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routes
   ],
   providers: [AppService],
   bootstrap: [AppComponent]
