@@ -12,6 +12,7 @@ import { ListComponent } from './todo/list/list.component';
 import { AppService } from '../app/app.service';
 import { routes } from "app/app.routes";
 import { HeaderComponent } from './header/header.component';
+import { BacktolistComponent } from './todo/backtolist/backtolist.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { HeaderComponent } from './header/header.component';
     EditComponent,
     ListComponent,
     AddComponent,
-    HeaderComponent
+    HeaderComponent,
+    BacktolistComponent
   ],
   imports: [
     BrowserModule,
