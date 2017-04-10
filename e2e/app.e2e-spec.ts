@@ -7,8 +7,8 @@ describe('angular4-todo App', () => {
     page = new Angular4TodoPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display message saying My Todo App', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('My Todo App');
   });
 });
