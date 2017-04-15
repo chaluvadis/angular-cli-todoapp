@@ -10,6 +10,8 @@ import { TodoComponent } from './todo/todo.component';
 import { EditComponent } from './todo/edit/edit.component';
 import { ListComponent } from './todo/list/list.component';
 import { AppService } from '../app/app.service';
+import { AppServer } from '../app/app.server.service'
+import { AppConfig } from './app.config'
 import { routes } from "app/app.routes";
 import { HeaderComponent } from './header/header.component';
 import { BacktolistComponent } from './todo/backtolist/backtolist.component';
@@ -29,7 +31,7 @@ import { BacktolistComponent } from './todo/backtolist/backtolist.component';
     HttpModule,
     routes
   ],
-  providers: [AppService],
+  providers: [AppService, AppServer, AppConfig],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

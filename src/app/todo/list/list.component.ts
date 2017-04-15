@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router'
 
-import { AppService } from '../../app.service';
+//import { AppService } from '../../app.service';
+import { AppServer } from '../../app.server.service'
 import { Task } from '../../task';
 @Component({
   selector: 'app-list',
@@ -9,8 +10,10 @@ import { Task } from '../../task';
 })
 export class ListComponent {
   @Input() tasks: Task[] = [];
-  constructor(private appService: AppService) { }
-  ngOnInit() {
-    this.tasks = this.appService.getAllTasks();
+  constructor(private appServer: AppServer) {
+    const locals = this.appServer.getAllTasks();
+    locals.subscribe(
+      (t: Task[]) => this.tasks = t
+    );
   }
 }

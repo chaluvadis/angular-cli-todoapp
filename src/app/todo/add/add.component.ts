@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { AppService } from '../../app.service';
+import { AppServer } from '../../app.server.service';
 import { Task } from '../../task';
 @Component({
   selector: 'app-add',
@@ -8,7 +8,7 @@ import { Task } from '../../task';
 export class AddComponent {
   private title = '';
   private _task: Task;
-  constructor(private appService: AppService) { }
+  constructor(private appServer: AppServer) { }
   addTask() {
     if (this.title !== '') {
       this._task = {
@@ -16,7 +16,8 @@ export class AddComponent {
         title: this.title,
         status: 'pending'
       }
-      this.appService.addTask(this._task);
+      const locals = this.appServer.addTask(this._task);
+      locals.subscribe((t: Task) => this._task = t)
       this.title = '';
     }
   }
