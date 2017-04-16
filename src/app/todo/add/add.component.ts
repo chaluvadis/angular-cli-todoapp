@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ActivatedRoute, Router } from "@angular/router";
 import { AppServer } from '../../app.server.service';
 import { Task } from '../../task';
 @Component({
@@ -8,7 +9,7 @@ import { Task } from '../../task';
 export class AddComponent {
   private title = '';
   private _task: Task;
-  constructor(private appServer: AppServer) { }
+  constructor(private appServer: AppServer, private router:Router) { }
   addTask() {
     if (this.title !== '') {
       this._task = {
@@ -16,8 +17,10 @@ export class AddComponent {
         title: this.title,
         status: 'pending'
       }
-      const locals = this.appServer.addTask(this._task);
-      locals.subscribe((t: Task) => this._task = t)
+      this.appServer.addTask(this._task)
+      .subscribe((t: Task) => {
+        this.router.navigate(['/list']);
+      })
       this.title = '';
     }
   }

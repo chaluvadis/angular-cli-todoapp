@@ -10,10 +10,8 @@ import { Task } from '../../task';
 })
 export class ListComponent {
   @Input() tasks: Task[] = [];
-  constructor(private appServer: AppServer) {
-    const locals = this.appServer.getAllTasks();
-    locals.subscribe(
-      (t: Task[]) => this.tasks = t
-    );
+  constructor(private appServer: AppServer) { }
+  ngOnInit() {
+    this.appServer.getAllTasks().subscribe((t: Task[]) => this.tasks = t);
   }
 }

@@ -3,8 +3,7 @@ import { RequestOptions, Http, Headers } from '@angular/http';
 import { AppConfig } from './app.config';
 import { Task } from './task'
 import { Observable } from "rxjs/Observable";
-import 'rxjs/Rx';
-
+import 'rxjs/add/operator/map';
 @Injectable()
 export class AppServer {
     constructor(private http: Http, private appConfig: AppConfig) { }
@@ -21,11 +20,10 @@ export class AppServer {
             .map(res => res.json());
     }
 
-    deleteTask(id: number): Observable<void> {
+    deleteTask(id: number): Observable<boolean> {
         return this.http.delete(this.appConfig.appUrl + "/" + id, this.appConfig.options)
             .map(res => res.json());
     }
-
     updateTask(task: Task): Observable<Task> {
         return this.http.put(this.appConfig.appUrl, task, this.appConfig.options)
             .map(res => res.json());
